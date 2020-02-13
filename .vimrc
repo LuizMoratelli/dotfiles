@@ -47,10 +47,6 @@ Plugin 'mtth/scratch.vim'
 Plugin 'machakann/vim-highlightedyank'
 Plugin 'kien/rainbow_parentheses.vim'
 Plugin 'reasonml-editor/vim-reason-plus'
-Plugin 'autozimu/LanguageClient-neovim', {
-    \ 'branch': 'next',
-    \ 'do': 'bash install.sh',
-    \ }
 Plugin 'prettier/vim-prettier', {
   \ 'do': 'yarn install',
   \ 'branch': 'release/1.x',
@@ -82,6 +78,7 @@ Plugin 'irrationalistic/vim-tasks'
 Plugin 'reedes/vim-thematic'
 Plugin 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plugin 'dart-lang/dart-vim-plugin'
+Plugin 'thosakwe/vim-flutter'
 
 let g:dart_style_guide = 2
 let g:dart_format_on_save = 1
@@ -102,6 +99,9 @@ let g:LanguageClient_serverCommands = {
     \ }
 
 nnoremap <F5> :call LanguageClient_contextMenu()<CR>
+nnoremap <leader>fR :FlutterHotRestart<cr>
+nnoremap <leader>fT :FlutterTab<cr>
+nnoremap <leader>fD :FlutterVisualDebug<cr>
 
 set hidden
 
