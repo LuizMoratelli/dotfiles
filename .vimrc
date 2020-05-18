@@ -67,7 +67,6 @@ Plugin 'prettier/vim-prettier', {
     \ 'html',
     \ 'swift' ] }
 
-Plugin 'ajh17/vimcompletesme'
 Plugin 'godlygeek/tabular'
 Plugin 'plasticboy/vim-markdown'
 Plugin 'zxqfl/tabnine-vim'
@@ -79,6 +78,8 @@ Plugin 'reedes/vim-thematic'
 Plugin 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plugin 'dart-lang/dart-vim-plugin'
 Plugin 'thosakwe/vim-flutter'
+Plugin 'iamcco/coc-flutter'
+Plugin 'editorconfig/editorconfig-vim'
 
 let g:dart_style_guide = 2
 let g:dart_format_on_save = 1
@@ -146,13 +147,18 @@ nmap <C-h> <C-w>h
 nmap <C-j> <C-w>j
 nmap <C-k> <C-w>k
 nmap <C-l> <C-w>l
-nmap <leader>sad <C-w>_
-nmap <leader>sar <C-w>|
-nmap <leader>saa <C-w>=
+nmap <leader>smh <C-w>_
+nmap <leader>smv <C-w>|
+nmap <leader>sea <C-w>=
+nmap <leader>sih <C-w>10>
+nmap <leader>sdh <C-w>10<
+nmap <leader>siv <C-w>10+
+nmap <leader>sdv <C-w>10-
 
 noremap <C-t>     :tabnew<CR>
 inoremap <C-t>     <Esc>:tabnew<CR>
-
+nmap <leader>vsp :vsp<CR>
+nmap <leader>hsp :sp<CR>
 
 set tabstop=1
 set shiftwidth=2
@@ -243,15 +249,14 @@ let g:ale_pattern_options_enabled = 1
 let g:ale_completion_enabled = 0
 let g:ale_echo_cursor = 1
 let g:ale_enabled = 1
-let g:ale_fix_on_save = 0
+let g:ale_fix_on_save = 1
+let g:ale_linters = { 'javascript': ['eslint'] }
+let g:ale_fixers = { 'javascript': ['eslint'] }
 let g:ale_lint_on_enter = 1
 let g:ale_lint_on_filetype_changed = 1
 
 let g:typescript_indent_disable = 1
 let g:typescript_compiler_binary = 'tsc'
-
-let g:python_host_prog = '/Users/medson/.asdf/plugins/python/pyenv/versions/neovim2/bin/python'
-let g:python3_host_prog = '/Users/medson/.asdf/plugins/python/pyenv/versions/neovim3/bin/python'
 
 let g:javascript_plugin_flow = 1
 let g:jsx_ext_required = 0
